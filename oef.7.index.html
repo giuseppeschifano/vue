@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    
+    <!-- <div id="app">
+        <h1 v-once>{{ title }}</h1>
+        <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+        <hr>
+        <p v-html='finishedLink'>{{ finishedLink }}</p>  
+    </div> -->
+
+
+    <div id="exercise">
+
+            <!-- 1) Fill the <p> below with your Name and Age - using Interpolation (( like this: {{ }} )) -->
+             <p>VueJS is pretty cool - My name is  {{ firstname }}  my age is {{ age }}</p>
+
+             <!-- 2) Output your age, multiplied by 3 -->
+             <p>My triple-age is {{ multAge() }}</p>
+
+             <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
+             <p>My random number is  {{ mathRndmNbr() }}  </p>
+
+             <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
+
+             <div>
+                    <p v-html='finishedLink'> {{ finishedLink }} </p>
+             </div>
+
+             <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
+             <div>
+                 <input type="text" v-bind:value="firstname" v-model="firstname" >
+             </div>
+
+         </div>
+
+    <script>
+
+    new Vue ({
+        el: '#exercise',
+        data: {
+            firstname: 'Giuseppe',
+            age: 59,
+            x: Math.random(),
+            finishedLink: '<img style="width:200px;height:200px" src="https://source.unsplash.com/random/201x201"/>',
+        },
+
+        methods: {
+            sayFirstname: function() {
+                return this.firstname;
+                return this.age;
+            },
+            multAge: function() {
+                return this.age * 3;
+            },
+            mathRndmNbr: function() {
+                return this.x;
+            },
+        }
+
+    });
+
+    </script>
+
+</body>
+</html>
